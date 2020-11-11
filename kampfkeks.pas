@@ -165,31 +165,31 @@ begin
                              Form1.zug(2,2); //Setze, wenn Mitte frei ist
                              exit;
                           end
-                     //else 
-                        //  begin
+                     else 
+                          begin
                               //Sonst setze in eine der Ecken
-                      //        r:=random(4)+1;
-                        //      if (r=1) AND (Form1.getBelegung(1,1)=0) then
-                          //        begin
-                            //          Form1.zug(1,1);
-                               //       exit;
-                          //        end
-                            //  else if (r=2) AND (Form1.getBelegung(3,1)=0) then
-                            //      begin
-                             //         Form1.zug(3,1);
-                               //       exit;
-                           //       end
-                           //   else if (r=3) AND (Form1.getBelegung(1,3)=0) then
-                            //      begin
-                             //         Form1.zug(1,3);
-                              //        exit;
-                            //      end
-                            //  else if (r=4) AND (Form1.getBelegung(3,3)=0) then
-                            //      begin
-                             //         Form1.zug(3,3);
-                               //       exit;
-                               //   end
-                         // end;
+                              r:=random(4)+1;
+                              if (r=1) AND (Form1.getBelegung(1,1)=0) then
+                                  begin
+                                      Form1.zug(1,1);
+                                      exit;
+                                  end
+                              else if (r=2) AND (Form1.getBelegung(3,1)=0) then
+                                  begin
+                                      Form1.zug(3,1);
+                                      exit;
+                                  end
+                              else if (r=3) AND (Form1.getBelegung(1,3)=0) then
+                                  begin
+                                      Form1.zug(1,3);
+                                      exit;
+                                  end
+                              else if (r=4) AND (Form1.getBelegung(3,3)=0) then
+                                  begin
+                                      Form1.zug(3,3);
+                                      exit;
+                                  end
+                          end;
                  end;
         end;
 end;
