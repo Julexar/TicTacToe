@@ -1,0 +1,69 @@
+unit Bot1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Spieler;
+
+
+type  TBot1 = class(TSpieler)
+     public
+         procedure calculate; override;
+         function change(rein:integer):integer;
+         function SummeZeile(i:integer):Integer;
+         function SummeSpalte(j:integer):Integer;
+         function SummeDiag1:Integer;
+         function SummeDiag2:Integer;
+ end;
+
+implementation
+uses spielfeld;
+
+procedure TBot1.calculate;
+var i,j:integer;
+begin
+  Form1.label1.Caption:='Bot1 kalkuliert';
+  for i:=1 to 3 do
+      for j:=1 to 3 do
+          if form1.getBelegung(i,j-2)=0 then
+          begin
+            form1.Zug(i,j);
+            exit;
+          end;
+  Form1.label1.Caption:='diesen Text solltest du nicht lesen können';
+end;
+
+
+function TBot1.change(rein:integer):integer;   //macht aus 2 -1
+begin
+  if rein=2 then result:=-1
+  else result:=rein;
+end;
+
+function TBot1.SummeZeile(i:integer):Integer;
+begin
+  result:=change(Form1.getBelegung(i,1))+change(Form1.getBelegung(i,2))+change(Form1.getBelegung(i,3))
+end;
+
+function TBot1.SummeSpalte(j:integer):Integer;
+begin
+  result:=change(Form1.getBelegung(1,j))+change(Form1.getBelegung(2,j))+change(Form1.getBelegung(3,j))
+end;
+
+function TBot1.SummeDiag1:Integer;
+begin
+  result:=change(Form1.getBelegung(1,1))+change(Form1.getBelegung(2,2))+change(Form1.getBelegung(3,3))
+end;
+
+
+function TBot1.SummeDiag2:Integer;
+begin
+  result:=change(Form1.getBelegung(3,1))+change(Form1.getBelegung(2,2))+change(Form1.getBelegung(1,3))
+end;
+
+
+
+end.
+

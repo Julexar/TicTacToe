@@ -1,0 +1,56 @@
+unit Bot3;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Spieler, Bot1, Math;
+
+type
+    TBot3 = class(TBot1)
+       public
+         procedure calculate; override;
+       private
+    end;
+
+
+implementation
+
+uses spielfeld;
+
+
+procedure TBot3.calculate;
+var i,j,x,y:integer;
+  sum,sumMax:double;
+  z: String;
+begin
+    begin
+    x:=2;
+    y:=2;
+    sumMax:=-1;
+    sum:=-2;
+    for i:=1 to 3 do
+        for j:=1 to 3 do
+            if Form1.getBelegung(i,j)=0 then                             //ich untersuche nur Felder die frei sind.
+            begin
+              z:='';                                                      //hier findet keine zufallsendscheidung statt
+              sum:=power(summeZeile(i),2)+power(SummeSpalte(j),2);        //+ und - heben sich in den summen auf, nicht zwischen den summen
+              if(i=j) then sum:=sum+power(SummeDiag1,2)+0.1;
+              if(i+j=4) then sum:=sum+power(SummeDiag2,2)+0.1;            //feld in mitte liegt auf beiden Diagonalen
+              if(sum>sumMax) then
+              begin
+                x:=i;
+                y:=j;
+                sumMax:=sum;
+              end
+            end;
+    infos:=infos+#13#10+inttostr(x)+'; '+inttostr(y)+z;
+    Form1.zug(x,y);
+    z:='';
+  end;
+end;
+
+
+end.
+

@@ -1,0 +1,150 @@
+unit Bot21;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Spieler, Bot1;
+
+type
+    TBot21 = class(TBot1)
+       public
+         procedure calculate; override;
+       private
+    end;
+
+
+implementation
+
+uses spielfeld;
+
+
+procedure TBot21.calculate;
+var i,j,z,pruef,zaehl:integer;
+  siegChance:boolean;
+begin
+
+  //kann ich gewinnen?
+  siegChance:=false;
+  pruef:=2*change(SpielerNr);
+  for i:=1 to 3 do
+      for j:=1 to 3 do
+          if Form1.getBelegung(i,j)=0 then      //ich untersuche nur Felder die frei sind.
+          begin
+            if SummeZeile(i)=pruef then           //Wenn in einer Zeile zwei meiner Felder sind, setze ich das dritte
+               siegChance:=true;
+            if SummeSpalte(j)=pruef then          //Wenn in einer Spalte zwei meiner Felder sind, setze ich das dritte
+               siegChance:=true;
+            if(i=j)AND(SummeDiag1=pruef) then       //erste Diagonale
+               siegChance:=true;
+            if(i+j=4)AND(SummeDiag2=pruef) then     //zweite Diagonale
+               siegChance:=true;
+            if Siegchance then
+            begin
+               infos:=infos+#13#10+'siegen '+IntToStr(i)+', '+IntToStr(j);
+               Form1.zug(i,j);
+               exit;
+            end;
+          end;
+
+  //droht der Gegner zu gewinnen? jetzt geht es um die Siegchance des Gegners
+  siegChance:=false;
+  pruef:=-2*change(SpielerNr);
+  for i:=1 to 3 do
+      for j:=1 to 3 do
+          if Form1.getBelegung(i,j)=0 then            //ich untersuche nur Felder die frei sind.
+          begin
+            if SummeZeile(i)=pruef then          //Wenn in einer Zeile zwei meiner Felder sind, setze ich das dritte
+               siegChance:=true;
+            if SummeSpalte(j)=pruef then          //Wenn in einer Spalte zwei meiner Felder sind, setze ich das dritte
+               siegChance:=true;
+            if(i=j)AND(SummeDiag1=pruef) then     //erste Diagonale
+               siegChance:=true;
+            if(i+j=4)AND(SummeDiag2=pruef) then   //zweite Diagonale
+               siegChance:=true;
+            if Siegchance then
+            begin
+               infos:=infos+#13#10+'nicht verlieren '+IntToStr(i)+', '+IntToStr(j);
+               Form1.zug(i,j);
+               exit;
+            end;
+          end;
+
+   //Ist die Mitte frei?
+   if Form1.getBelegung(2,2)=0 then                                //im Zweifel ist die Mitte eine gute Idee.
+   begin
+      infos:=infos+#13#10+'Mitte';
+      form1.zug(2,2);
+      exit;
+   end;
+
+  //Standardfalle verhindern
+  if (SpielerNr=2)And(Form1.getBelegung(1,3)=1)AND(Form1.getBelegung(3,1)=1)AND(Form1.getBelegung(1,2)=0) then
+  begin
+     infos:=infos+#13#10+'Standardfalle verhindern '+IntToStr(1)+', '+IntToStr(2);
+     Form1.zug(1,2);
+     exit;
+  end;
+  if (SpielerNr=2)And(Form1.getBelegung(1,1)=1)AND(Form1.getBelegung(3,3)=1)AND(Form1.getBelegung(2,1)=0) then
+  begin
+     infos:=infos+#13#10+'Standardfalle verhindern '+IntToStr(2)+', '+IntToStr(1);
+     Form1.zug(2,1);
+     exit;
+  end;
+
+  //ist noch ein Gegenüberliegendes Eckenpaar frei?
+  if (Form1.getBelegung(1,1)=0)AND(Form1.getBelegung(3,3)=0) then
+  begin
+     randomize;
+     z:=random(2);
+     infos:=infos+#13#10+'Ecken z='+IntToStr(z);
+     if z=0 then Form1.zug(3,3)
+     else Form1.zug(1,1);
+     exit;
+  end;
+  if (Form1.getBelegung(3,1)=0)AND(Form1.getBelegung(1,3)=0) then
+  begin
+     randomize;
+     z:=random(2);
+     infos:=infos+#13#10+'Ecken z='+IntToStr(z);
+     if z=0 then Form1.zug(3,1)
+     else Form1.zug(1,3);
+     exit;
+  end;
+
+//wenn mir nichts besseres einfällt
+
+  //wenn mir nichts besseres einfällt
+  zaehl:=0;
+  while zaehl<10 do                    //10 Versuche für einen zufallszug
+  begin
+    zaehl:=zaehl+1;
+//    randomize;
+    i:=random(3)+1;
+    j:=random(3)+1;
+    if Form1.getBelegung(i,j)=0 then
+    begin
+      infos:=infos+#13#10+'Zufall '+IntToStr(i)+', '+IntToStr(j);
+      Form1.Zug(i,j);
+      exit;
+    end;
+  end;
+
+//wenn ich zehnmal kein zufällig freies Feld gefunden habe
+  for i:=1 to 3 do
+      for j:=1 to 3 do
+          if form1.getBelegung(i,j)=0 then
+          begin
+            infos:=infos+#13#10+'trödeln '+IntToStr(i)+', '+IntToStr(j);
+            form1.Zug(i,j);
+            exit;
+          end;
+  Form1.label1.Caption:='diesen Text solltest du nicht lesen können';
+
+end;
+
+
+
+end.
+

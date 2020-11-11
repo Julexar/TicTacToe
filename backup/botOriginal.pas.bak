@@ -1,0 +1,31 @@
+unit Spieler;
+
+{$mode objfpc}{$H+}
+
+
+
+uses
+  Classes, SysUtils;
+
+type TSpieler = class
+       public
+         SpielerNr: integer;
+         procedure calculate;
+         constructor create(Nummer:integer); override;
+    end;
+
+implementation
+uses main;
+
+constructor TSpieler.create(Nummer:integer);
+begin
+  SpielerNr:= Nummer;
+end;
+
+procedure TSpieler.calculate;
+begin
+    Form1.label1.Caption:='diesen Text solltest du nicht lesen können';
+end;
+
+end.
+

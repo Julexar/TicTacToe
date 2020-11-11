@@ -1,0 +1,115 @@
+object Form1: TForm1
+  Left = 742
+  Height = 522
+  Top = 116
+  Width = 705
+  Caption = 'Form1'
+  ClientHeight = 522
+  ClientWidth = 705
+  LCLVersion = '2.0.10.0'
+  object Label1: TLabel
+    Left = 247
+    Height = 15
+    Top = 24
+    Width = 66
+    Caption = 'Tick tack toe'
+    ParentColor = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 440
+    Width = 170
+    Caption = 'Panel1'
+    TabOrder = 0
+    Visible = False
+    OnClick = Panel1Click
+  end
+  object Spieler1: TRadioGroup
+    Left = 416
+    Height = 127
+    Top = 24
+    Width = 96
+    AutoFill = True
+    Caption = 'Spieler1'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 107
+    ClientWidth = 92
+    Items.Strings = (
+      'Mensch'
+      'Computer'
+    )
+    TabOrder = 1
+  end
+  object StartKnopf: TButton
+    Left = 266
+    Height = 25
+    Top = 61
+    Width = 75
+    Caption = 'StartKnopf'
+    OnClick = StartKnopfClick
+    TabOrder = 2
+  end
+  object Spieler2: TRadioGroup
+    Left = 528
+    Height = 127
+    Top = 24
+    Width = 96
+    AutoFill = True
+    Caption = 'Spieler2'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 107
+    ClientWidth = 92
+    Items.Strings = (
+      'Mensch'
+      'Computer'
+    )
+    TabOrder = 3
+  end
+  object Info2: TLabel
+    Left = 568
+    Height = 15
+    Top = 208
+    Width = 27
+    Caption = 'Info2'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 424
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'Infos 1'
+    OnClick = Button1Click
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 536
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'Infos 2'
+    OnClick = Button2Click
+    TabOrder = 5
+  end
+  object Info3: TLabel
+    Left = 424
+    Height = 15
+    Top = 208
+    Width = 27
+    Caption = 'Info3'
+    ParentColor = False
+  end
+end

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.4\bin\i386-win32\fpc.exe" Date="1280920154"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiG:\ABI22-2inf1-KRA\TicTacToe\lib\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuG:\ABI22-2inf1-KRA\TicTacToe\ -FUG:\ABI22-2inf1-KRA\TicTacToe\lib\i386-win32\ -dLCL -dLCLwin32 TicTacToe.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>
