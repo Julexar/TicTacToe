@@ -191,6 +191,8 @@ begin
                                   end
                           end;
                      //Überprüfe nach Zwickmühlen (in Arbeit).
+                     
+                     //Stelle selbst Zwickühlen.
                  end;
         end;
 end;
