@@ -160,13 +160,13 @@ begin
                                   end
                         end;
                      //Überprüfe ob Mitte frei ist
-                   //  if (Form1.getBelegung(2,2)=0) then
-                     //     begin
-                       //      Form1.zug(2,2); //Setze, wenn Mitte frei ist
-                      //       exit;
-                     //     end
-                  //   else 
-                    //      begin
+                     if (Form1.getBelegung(2,2)=0) then
+                          begin
+                             Form1.zug(2,2); //Setze, wenn Mitte frei ist
+                             exit;
+                          end
+                     //else 
+                        //  begin
                               //Sonst setze in eine der Ecken
                       //        r:=random(4)+1;
                         //      if (r=1) AND (Form1.getBelegung(1,1)=0) then
