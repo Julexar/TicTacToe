@@ -61,7 +61,7 @@ begin
                                           end
                                  end;
                          end;
-                     if ((Form1.getBelegung(1,1)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) XOR ((Form1.getBelegung(1,1)=Form1.getBelegung(3,3)) AND (Form1.getBelegung(3,3)=botNr)) XOR ((Form1.getBelegung(2,2)=Form1.getBelegung(3,3)) AND (Form1.getBelegung(3,3)=botNr)) then
+                    // if ((Form1.getBelegung(1,1)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) XOR ((Form1.getBelegung(1,1)=Form1.getBelegung(3,3)) AND (Form1.getBelegung(3,3)=botNr)) XOR ((Form1.getBelegung(2,2)=Form1.getBelegung(3,3)) AND (Form1.getBelegung(3,3)=botNr)) then
                         begin
                              if (Form1.getBelegung(1,1)=0) then                       //erste Diagonale durchsuchen und Zug machen
                                 begin
@@ -79,7 +79,7 @@ begin
                                        exit;
                                   end
                         end;
-                     if ((Form1.getBelegung(1,3)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) XOR ((Form1.getBelegung(1,3)=Form1.getBelegung(3,1)) AND (Form1.getBelegung(3,1)=botNr)) XOR ((Form1.getBelegung(3,1)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) then
+                 //    if ((Form1.getBelegung(1,3)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) XOR ((Form1.getBelegung(1,3)=Form1.getBelegung(3,1)) AND (Form1.getBelegung(3,1)=botNr)) XOR ((Form1.getBelegung(3,1)=Form1.getBelegung(2,2)) AND (Form1.getBelegung(2,2)=botNr)) then
                         begin
                              if (Form1.getBelegung(1,3)=0) then
                                 begin
@@ -98,9 +98,9 @@ begin
                                   end
                         end;
                       //Überprüfe ob Gegner gewinnen kann
-                     //for a:=1 to 3 do
-                       //  begin
-                         //     if ((Form1.getBelegung(a,1)=Form1.getBelegung(a,2)) AND NOT (Form1.getBelegung(a,1)=botNr) AND (Form1.getBelegung(a,1)>0)) XOR ((Form1.getBelegung(a,1)=Form1.getBelegung(a,3)) AND NOT (Form1.getBelegung(a,1)=botNr) AND (Form1.getBelegung(a,1)>0)) XOR ((Form1.getBelegung(a,2)=Form1.getBelegung(a,3)) AND NOT (Form1.getBelegung(a,2)=botNr) AND (Form1.getBelegung(a,2)>0)) then         
+                     for a:=1 to 3 do
+                         begin
+                              if ((Form1.getBelegung(a,1)=Form1.getBelegung(a,2)) AND NOT (Form1.getBelegung(a,1)=botNr) AND (Form1.getBelegung(a,1)>0)) XOR ((Form1.getBelegung(a,1)=Form1.getBelegung(a,3)) AND NOT (Form1.getBelegung(a,1)=botNr) AND (Form1.getBelegung(a,1)>0)) XOR ((Form1.getBelegung(a,2)=Form1.getBelegung(a,3)) AND NOT (Form1.getBelegung(a,2)=botNr) AND (Form1.getBelegung(a,2)>0)) then         
                                  begin
                                       for b:=1 to 3 do
                                           begin
@@ -111,7 +111,7 @@ begin
                                                    end
                                            end
                                   end;
-                         //      if ((Form1.getBelegung(1,a)=Form1.getBelegung(2,a)) AND NOT (Form1.getBelegung(1,a)=botNr) AND (Form1.getBelegung(1,a)>0)) XOR ((Form1.getBelegung(1,a)=Form1.getBelegung(3,a)) AND NOT (Form1.getBelegung(1,a)=botNr) AND (Form1.getBelegung(1,a)>0)) XOR ((Form1.getBelegung(2,a)=Form1.getBelegung(3,a)) AND NOT (Form1.getBelegung(2,a)=botNr) AND (Form1.getBelegung(2,a)>0)) then
+                               if ((Form1.getBelegung(1,a)=Form1.getBelegung(2,a)) AND NOT (Form1.getBelegung(1,a)=botNr) AND (Form1.getBelegung(1,a)>0)) XOR ((Form1.getBelegung(1,a)=Form1.getBelegung(3,a)) AND NOT (Form1.getBelegung(1,a)=botNr) AND (Form1.getBelegung(1,a)>0)) XOR ((Form1.getBelegung(2,a)=Form1.getBelegung(3,a)) AND NOT (Form1.getBelegung(2,a)=botNr) AND (Form1.getBelegung(2,a)>0)) then
                                   begin
                                        for b:=1 to 3 do                                                       //Spalten durchsuchen und Zug machen
                                            begin
