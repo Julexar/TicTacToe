@@ -190,6 +190,7 @@ begin
                                       exit;
                                   end
                           end;
+                      //Überprüfe ob es Zwickmühlen gibt. (in Arbeit)
                  end;
         end;
 end;
