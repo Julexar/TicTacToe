@@ -6,7 +6,8 @@ Only the following Versions are offically supported. If you use a different vers
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0-beta.1   | :white_check_mark: |
+| 1.0-beta.1   | :x: |
+| 1.0-beta.2   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
