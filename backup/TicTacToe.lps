@@ -8,7 +8,6 @@
       <Unit0>
         <Filename Value="TicTacToe.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <CursorPos X="39" Y="10"/>
         <UsageCount Value="206"/>
@@ -78,7 +77,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="18"/>
         <CursorPos X="26" Y="33"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="33"/>
       </Unit7>
       <Unit8>
         <Filename Value="botOriginal.pas"/>
@@ -115,133 +114,134 @@
       </Unit11>
       <Unit12>
         <Filename Value="kampfkeks.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="111"/>
-        <CursorPos X="402" Y="114"/>
-        <UsageCount Value="15"/>
+        <TopLine Value="34"/>
+        <CursorPos X="9" Y="42"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit12>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="28" Column="45" TopLine="16"/>
+        <Caret Line="42" Column="14" TopLine="29"/>
       </Position1>
       <Position2>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="29" Column="8" TopLine="17"/>
+        <Caret Line="43" Column="16" TopLine="31"/>
       </Position2>
       <Position3>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="42" Column="14" TopLine="29"/>
+        <Caret Line="52" Column="18" TopLine="34"/>
       </Position3>
       <Position4>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="43" Column="16" TopLine="31"/>
+        <Caret Line="45" Column="36" TopLine="29"/>
       </Position4>
       <Position5>
-        <Filename Value="kampfkeks.pas"/>
-        <Caret Line="52" Column="18" TopLine="34"/>
-      </Position5>
-      <Position6>
-        <Filename Value="kampfkeks.pas"/>
-        <Caret Line="45" Column="36" TopLine="29"/>
-      </Position6>
-      <Position7>
         <Filename Value="Spielfeld.pas"/>
         <Caret Line="140" Column="32" TopLine="128"/>
-      </Position7>
-      <Position8>
+      </Position5>
+      <Position6>
         <Filename Value="Spielfeld.pas"/>
         <Caret Line="136" Column="14" TopLine="126"/>
+      </Position6>
+      <Position7>
+        <Filename Value="kampfkeks.pas"/>
+        <Caret Line="27" Column="42" TopLine="19"/>
+      </Position7>
+      <Position8>
+        <Filename Value="kampfkeks.pas"/>
+        <Caret Line="46" Column="12" TopLine="29"/>
       </Position8>
       <Position9>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="27" Column="42" TopLine="19"/>
+        <Caret Line="41" Column="24" TopLine="24"/>
       </Position9>
       <Position10>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="46" Column="12" TopLine="29"/>
+        <Caret Line="48" Column="36" TopLine="36"/>
       </Position10>
       <Position11>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="41" Column="24" TopLine="24"/>
+        <Caret Line="59" Column="96" TopLine="47"/>
       </Position11>
       <Position12>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="48" Column="36" TopLine="36"/>
+        <Caret Line="48" Column="37" TopLine="33"/>
       </Position12>
       <Position13>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="59" Column="96" TopLine="47"/>
+        <Caret Line="50" Column="23" TopLine="33"/>
       </Position13>
       <Position14>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="48" Column="37" TopLine="33"/>
+        <Caret Line="48" Column="36" TopLine="35"/>
       </Position14>
       <Position15>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="50" Column="23" TopLine="33"/>
+        <Caret Line="51" Column="201" TopLine="30"/>
       </Position15>
       <Position16>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="48" Column="36" TopLine="35"/>
+        <Caret Line="70" Column="46" TopLine="59"/>
       </Position16>
       <Position17>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="51" Column="201" TopLine="30"/>
+        <Caret Line="11" Column="20" TopLine="8"/>
       </Position17>
       <Position18>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="70" Column="46" TopLine="59"/>
+        <Caret Line="22" Column="19" TopLine="15"/>
       </Position18>
       <Position19>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="11" Column="20" TopLine="8"/>
+        <Caret Line="27" Column="34" TopLine="16"/>
       </Position19>
       <Position20>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="22" Column="19" TopLine="15"/>
+        <Caret Line="75" Column="30" TopLine="57"/>
       </Position20>
       <Position21>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="27" Column="34" TopLine="16"/>
+        <Caret Line="12" Column="29"/>
       </Position21>
       <Position22>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="75" Column="30" TopLine="57"/>
+        <Caret Line="26" Column="5" TopLine="15"/>
       </Position22>
       <Position23>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="12" Column="29"/>
+        <Caret Line="92" Column="293" TopLine="81"/>
       </Position23>
       <Position24>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="26" Column="5" TopLine="15"/>
+        <Caret Line="132" Column="278" TopLine="123"/>
       </Position24>
       <Position25>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="92" Column="293" TopLine="81"/>
+        <Caret Line="89" Column="45" TopLine="79"/>
       </Position25>
       <Position26>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="132" Column="278" TopLine="123"/>
+        <Caret Line="179" Column="53" TopLine="164"/>
       </Position26>
       <Position27>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="89" Column="45" TopLine="79"/>
+        <Caret Line="70" Column="31" TopLine="57"/>
       </Position27>
       <Position28>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="37" Column="23" TopLine="129"/>
+        <Caret Line="238" Column="22" TopLine="184"/>
       </Position28>
       <Position29>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="80" Column="48" TopLine="146"/>
+        <Caret Line="39" Column="42" TopLine="30"/>
       </Position29>
       <Position30>
         <Filename Value="kampfkeks.pas"/>
-        <Caret Line="179" Column="53" TopLine="164"/>
+        <Caret Line="32" Column="9" TopLine="24"/>
       </Position30>
     </JumpHistory>
     <RunParams>
