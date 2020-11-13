@@ -267,7 +267,7 @@ begin
                      //Setze auf die Seiten
                      for a:=1 to 3 do
                         begin
-                            if NOT (Form1.getBelegung(a,1)=Form1.getBelegung(a,2)) AND (((Form1.getBelegung(a,2)=botNr) XOR NOT ((Form1.getBelegung(a,2)=botNr) AND (Form1.getBelegung(a,2)=0))) XOR (Form1.getBelegung(a,1)=botNr) XOR NOT ((Form1.getBelegung(a,1)=botNr) AND (Form1.getBelegung(a,1)>0)))
+                            //if NOT (((Form1.getBelegung(a,1)=(Form1.getBelegung(a,2)) AND ((((Form1.getBelegung(a,2)=botNr) XOR NOT ((Form1.getBelegung(a,2)=botNr) AND NOT (Form1.getBelegung(a,2)=0)) XOR ((Form1.getBelegung(a,1)=botNr) XOR NOT ((Form1.getBelegung(a,1)=botNr)) AND NOT (Form1.getBelegung(a,1)=0)))) XOR NOT (((Form1.getBelegung(a,1)=Form1.getBelegung(a,3)) AND (Form1.getBelegung(a,1)=botNr
                         end
                  end;
         end;
