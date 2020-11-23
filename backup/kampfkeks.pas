@@ -36,7 +36,7 @@ begin
     begin
          for p:=1 to 3 do
          begin
-           e:=e+(Form1.getBelegung(i,j));
+           e:=e+(Form1.getBelegung(h,p));
 
          end
     end;

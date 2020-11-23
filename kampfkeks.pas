@@ -240,9 +240,7 @@ begin
                                       exit;
                                   end
                           end;
-
-                     
-                     //Stelle selbst Zwickühlen.
+                     //Setze auf die Seiten
                  end;
         end;
 
