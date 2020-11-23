@@ -35,11 +35,34 @@ begin
     for h:=1 to 3 do
     begin
          for p:=1 to 3 do
-         begin
-           e:=e+(Form1.getBelegung(h,p));
-
-         end
+            begin
+                e:=e+(Form1.getBelegung(h,p));
+            end;
     end;
+    if e=0 then
+        begin
+            r:=random(4)+1;
+            if (r=1) AND (Form1.getBelegung(1,1)=0) then
+                begin
+                     Form1.zug(1,1);
+                     exit;
+                end
+            else if (r=2) AND (Form1.getBelegung(3,1)=0) then
+                begin
+                     Form1.zug(3,1);
+                     exit;
+                end
+            else if (r=3) AND (Form1.getBelegung(1,3)=0) then
+                begin
+                     Form1.zug(1,3);
+                     exit;
+                end
+            else if (r=4) AND (Form1.getBelegung(3,3)=0) then
+                begin
+                     Form1.zug(3,3);
+                     exit;
+                end
+        end;
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
     //Setze auf die Diagonale beim ersten Zug, wenn alle Felder frei sind
     if e=0 then
@@ -218,52 +241,81 @@ begin
                           end
                      else 
                           begin
+              //------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
                               //Sonst setze in eine der Ecken
                               r:=random(4)+1;
-                              if (r=1) AND (Form1.getBelegung(1,1)=0) then
+                              if NOT ((Form1.getBelegung(1,1)=botNr) XOR (Form1.getBelegung(3,1)=botNr) XOR (Form1.getBelegung(1,3)=botNr) XOR (Form1.getBelegung(3,3)=botNr)) then
                                   begin
-                                      Form1.zug(1,1);
-                                      exit;
-                                  end
-                              else if (r=2) AND (Form1.getBelegung(3,1)=0) then
-                                  begin
-                                      Form1.zug(3,1);
-                                      exit;
-                                  end
-                              else if (r=3) AND (Form1.getBelegung(1,3)=0) then
-                                  begin
-                                      Form1.zug(1,3);
-                                      exit;
-                                  end
-                              else if (r=4) AND (Form1.getBelegung(3,3)=0) then
-                                  begin
-                                      Form1.zug(3,3);
-                                      exit;
+                                      if (r=1) AND (Form1.getBelegung(1,1)=0) then
+                                          begin
+                                              Form1.zug(1,1);
+                                              exit;
+                                          end
+                                      else if (r=2) AND (Form1.getBelegung(3,1)=0) then
+                                          begin
+                                              Form1.zug(3,1);
+                                              exit;
+                                          end
+                                      else if (r=3) AND (Form1.getBelegung(1,3)=0) then
+                                          begin
+                                              Form1.zug(1,3);
+                                              exit;
+                                          end
+                                      else if (r=4) AND (Form1.getBelegung(3,3)=0) then
+                                          begin
+                                              Form1.zug(3,3);
+                                              exit;
+                                          end
                                   end;
-                              //Setze auf das gegenüberliegende diagonale Feld, wenn es frei ist.
-                              if (Form1.getBelegung(1,1)=botNr) AND (Form1.getBelegung(3,3)=0) then
-                                 begin
-                                      Form1.zug(3,3);
-                                      exit;
-                                 end
-                              else if (Form1.getBelegung(3,1)=botNr) AND (Form1.getBelegung(1,3)=0) then
-                                   begin
-                                        Form1.zug(1,3);
-                                        exit;
-                                   end
-                              else if (Form1.getBelegung(1,3)=botNr) AND (Form1.getBelegung(3,1)=0) then
-                                   begin
-                                        Form1.zug(3,1);
-                                        exit;
-                                   end
-                              else if (Form1.getBelegung(3,3)=botNr) AND (Form1.getBelegung(1,1)=0) then
-                                   begin
-                                        Form1.zug(1,1);
-                                        exit;
-                                   end;
+                              else
+                                  begin
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                 
+                                  //Setzte auf die gegenüberliegende Ecke.
+                                      if (Form1.getBelegung(1,1)=botNr) AND (Form1.getBelegung(3,3)=0) then       
+                                          begin
+                                              Form1.zug(3,3);
+                                              exit;
+                                          end
+                                      else if (Form1.getBelegung(3,1)=botNr) AND (Form1.getBelegung(1,3)=0) then
+                                          begin
+                                              Form1.zug(1,3);
+                                              exit;
+                                          end
+                                      else if (Form1.getBelegung(1,3)=botNr) AND (Form1.getBelegung(3,1)=0) then
+                                          begin
+                                              Form1.zug(3,1);
+                                              exit;
+                                          end
+                                      else if (Form1.getBelegung(3,3)=botNr) AND (Form1.getBelegung(1,1)=0) then
+                                          begin
+                                              Form1.zug(1,1);
+                                              exit;
+                                          end;
+                                  end;
                           end;
-                     //Setze auf die Seiten (in Arbeit)
-
+ //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                         
+                     //Setze auf die Seiten     
+                        //Überprüfe ob eine Zeile vom Bot oder Gegner und ob eine andere Zeile in derselben Spalte vom Bot oder Gegner belegt wurde
+                            //if (Form1.getBelegung(2,1)=0) AND ((Form1.getBelegung(1,1)=botNr) XOR NOT ((Form1.getBelegung(1,1)=botNr) AND NOT (Form1.getBelegung(1,1)=0))) OR ((Form1.getBelegung(3,1)=botNr) XOR NOT ((Form1.getBelegung(3,1)=botNr) AND NOT (Form1.getBelegung(3,1)=0))) then
+                            //    begin
+                            //          Form1.zug(2,1);
+                            //          exit;
+                            //    end
+                            //else if ((Form1.getBelegung(1,2)=0) AND ((Form1.getBelegung(1,1)=botNr) XOR NOT ((Form1.getBelegung(1,1)=botNr) AND NOT (Form1.getBelegung(1,1)=0))) OR ((Form1.getBelegung(1,3)=botNr) XOR NOT ((Form1.getBelegung(1,3)=botNr) AND NOT (Form1.getBelegung(1,3)=0))) then
+                            //    begin
+                            //          Form1.zug(1,2);
+                            //          exit;
+                            //    end
+                            //else if (Form1.getBelegung(3,2)=0) AND ((Form1.getBelegung(3,1)=botNr) XOR NOT ((Form1.getBelegung(3,1)=botNr) AND NOT (Form1.getBelegung(3,1)=0))) OR ((Form1.getBelegung(3,3)=botNr) XOR NOT ((Form1.getBelegung(3,3)=botNr) AND NOT (Form1.getBelegung(3,3)=0))) then
+                            //    begin
+                            //          Form1.zug(3,2);
+                            //          exit;
+                            //    end
+                            //else if (Form1.getBelegung(2,3)=0) AND ((Form1.getBelegung(1,3)=botNr) XOR NOT ((Form1.getBelegung(1,3)=botNr) AND NOT (Form1.getBelegung(1,3)=0))) OR ((Form1.getBelegung(3,3)=botNr) XOR NOT ((Form1.getBelegung(3,3)=botNr) AND NOT (Form1.getBelegung(3,3)=0))) then
+                            //    begin
+                            //          Form1.zug(2,3);
+                            //          exit;
+                            //    end;
                  end;
         end;
 
