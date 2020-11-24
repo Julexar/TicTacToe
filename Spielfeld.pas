@@ -45,6 +45,7 @@ type
     { public declarations }
     function getBelegung(i: Integer; j:Integer): integer;       //0 heißt frei, 1/2 heißt Spieler 1/2 hat schon drauf gesetzt
     procedure Zug(i, j:Integer);                                //es wird auf das Feld i,j gesetzt.
+    procedure Delay(dt: QWORD);
   end;
 
 var
@@ -245,6 +246,15 @@ function TForm1.getBelegung(i: Integer; j:Integer): integer;
         result:=-1;                                                                 //so kann überprüft werden, ob die Belegung erfolgreich abgefragt wurde
     end;
   end;
+//-----------------------------------------------------------------------------------------------
+procedure TForm1.Delay(dt: QWORD);            //Bleibe auf dem Screen, damit man das Ergebnis sieht
+var
+  tc:QWORD;
+begin
+  tc:=GetTickCount64;
+  while (GetTickCount64<tc+dt) and (not Application.Terminated) do
+    Application.ProcessMessages;
+end;
 
 end.
 
