@@ -1,12 +1,13 @@
 # Security Policy
 
-Only the following Versions are offically supported. If you use a different version, there might be problems.
+Only the following Versions are offically supported. If you use a different version, there might be problems. Issues regarding unsupported Versions will be ignored.
 
 ## Supported Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0-beta.1   | :white_check_mark: |
+| 1.0-beta.1   | :x: |
+| 1.0          | :white_check_mark:
 
 ## Reporting a Vulnerability
 
