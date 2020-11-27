@@ -7,6 +7,7 @@ Only the following Versions are offically supported. If you use a different vers
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0-beta.1   | :x: |
+| 1.0-beta.2   | :x: |
 | 1.0          | :white_check_mark: |
 | .zip 1.0     | :white_check_mark: |
 
