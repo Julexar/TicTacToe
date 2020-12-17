@@ -247,7 +247,7 @@ function TForm1.getBelegung(i: Integer; j:Integer): integer;
     end;
   end;
 //-----------------------------------------------------------------------------------------------
-procedure TForm1.Delay(dt: QWORD);            //Bleibe auf dem Screen, damit man das Ergebnis sieht
+procedure TForm1.Delay(dt: QWORD);            //Zur Visualisierung der Reihenfolge der Züge
 var
   tc:QWORD;
 begin

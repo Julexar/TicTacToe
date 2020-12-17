@@ -1,17 +1,17 @@
 object Form1: TForm1
-  Left = 408
+  Left = 742
   Height = 522
-  Top = 150
+  Top = 116
   Width = 705
   Caption = 'Form1'
   ClientHeight = 522
   ClientWidth = 705
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.10.0'
   object Label1: TLabel
     Left = 247
     Height = 15
     Top = 24
-    Width = 67
+    Width = 66
     Caption = 'Tick tack toe'
     ParentColor = False
   end

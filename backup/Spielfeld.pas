@@ -45,7 +45,7 @@ type
     { public declarations }
     function getBelegung(i: Integer; j:Integer): integer;       //0 heißt frei, 1/2 heißt Spieler 1/2 hat schon drauf gesetzt
     procedure Zug(i, j:Integer);                                //es wird auf das Feld i,j gesetzt.
-    function getDran():integer;
+    procedure Delay(dt: QWORD);
   end;
 
 var
@@ -115,10 +115,6 @@ begin
   else if dran=2 then dran:=1;
   label1.caption:='Dran ist Spieler: '+inttostr(dran);
   Spieler[dran].calculate;                                  //der Spieler der dran ist, berechnet seinen nächsten Zug.
-end;
-function TForm1.getDran():integer;
-begin
-  Result:=dran;
 end;
 
 procedure TForm1.Feldklik(sender: TObject);           //Was passiert wenn ein Spieler auf ein Panel click
@@ -250,6 +246,15 @@ function TForm1.getBelegung(i: Integer; j:Integer): integer;
         result:=-1;                                                                 //so kann überprüft werden, ob die Belegung erfolgreich abgefragt wurde
     end;
   end;
+//-----------------------------------------------------------------------------------------------
+procedure TForm1.Delay(dt: QWORD);            //Bleibe auf dem Screen, damit man das Ergebnis sieht
+var
+  tc:QWORD;
+begin
+  tc:=GetTickCount64;
+  while (GetTickCount64<tc+dt) and (not Application.Terminated) do
+    Application.ProcessMessages;
+end;
 
 end.
 
