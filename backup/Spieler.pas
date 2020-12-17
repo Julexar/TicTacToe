@@ -19,7 +19,8 @@ type
 
 implementation
 uses spielfeld;
-
+var
+  spiler:TSpieler;
 constructor TSpieler.create(Nummer:integer);
 begin
   create;
